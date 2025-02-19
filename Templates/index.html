@@ -10,25 +10,58 @@
 
 <body class='bg-white text-black font-sans'>
 
-    <header class="sticky top-0 z-10">
-
-        <nav class="bg-black p-4 flex justify-between items-center">
+    <header class="sticky top-0 z-50 bg-black shadow-md">
+        <nav class="container mx-auto p-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <span class="text-white font-bold text-lg">Sahil</span>
             </div>
+    
             <div class="hidden md:flex space-x-6">
-                <a href="#" class="text-white hover:text-gray-400 transition">Home</a>
-                <a href="#" class="text-white hover:text-gray-400 transition">About</a>
-                <a href="#" class="text-white hover:text-gray-400 transition">Experiences</a>
-                <a href="#" class="text-white hover:text-gray-400 transition">Projects</a>
-                <a href="#" class="text-white hover:text-gray-400 transition">Contact</a>
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300 relative group">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300 relative group">
+                    About
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300 relative group">
+                    Experiences
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300 relative group">
+                    Projects
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#" class="text-white hover:text-gray-400 transition duration-300 relative group">
+                    Contact
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
             </div>
-            <button class="md:hidden text-white focus:outline-none">
+    
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
                 ☰
             </button>
         </nav>
-
+    
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col items-center bg-black py-4 space-y-3 text-white">
+            <a href="#" class="hover:text-gray-400">Home</a>
+            <a href="#" class="hover:text-gray-400">About</a>
+            <a href="#" class="hover:text-gray-400">Experiences</a>
+            <a href="#" class="hover:text-gray-400">Projects</a>
+            <a href="#" class="hover:text-gray-400">Contact</a>
+        </div>
+    
+        <script>
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+    
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        </script>
     </header>
+    
 
     <!-- Landing page -->
     <section
@@ -38,7 +71,7 @@
         </div>
         <div class="text-center md:text-left max-w-lg">
             <p class="text-gray-600">Hello, I'm</p>
-            <h1 class="text-4xl font-bold">Anubhav Jaiswal</h1>
+            <h1 class="text-4xl font-bold">Sahil</h1>
             <h2 class="text-xl text-gray-700">Frontend Developer</h2>
             <div class="flex justify-center md:justify-start space-x-4 mt-6">
                 <a href="path/to/cv.pdf" download
@@ -60,34 +93,40 @@
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center md:space-x-12">
             <div class="md:w-1/3 flex justify-center">
                 <img src="../Assests/profile.png" alt="Profile Picture"
-                    class="rounded-lg shadow-lg w-80 h-80 object-cover">
+                    class="rounded-lg shadow-lg w-80 h-80 object-cover transition-transform duration-300 hover:scale-110 hover:shadow-2xl hover:ring-4 hover:ring-gray-300">
             </div>
-            <div class="md:w-2/3 text-center md:text-left mt-8 md:mt-0">
+    
+            <div class="md:w-2/3 text-center md:text-left mt-8 md:mt-0 animate-fade-in">
                 <p class="text-gray-500 uppercase tracking-wide text-sm">Get To Know More</p>
-                <h2 class="text-4xl font-bold mb-6">About Me</h2>
-                <div
-                    class="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-6">
-                    <div class="border-2 border-gray-300 p-4 rounded-lg shadow-md text-center w-full md:w-1/2">
+                <h2 class="text-4xl font-bold mb-6 text-gray-800">About Me</h2>
+    
+                <div class="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-6">
+                    <div
+                        class="border-2 border-gray-300 p-4 rounded-lg shadow-md text-center w-full md:w-1/2 transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-transparent hover:bg-gradient-to-r from-gray-200 to-gray-100">
                         <span class="text-2xl">🏅</span>
-                        <h3 class="font-bold text-lg">Experience</h3>
+                        <h3 class="font-bold text-lg text-gray-800">Experience</h3>
                         <p class="text-gray-600">1+ years</p>
                         <p class="text-gray-500 text-sm">Full-stack Development</p>
                     </div>
-                    <div class="border-2 border-gray-300 p-4 rounded-lg shadow-md text-center w-full md:w-1/2">
+                    <div
+                        class="border-2 border-gray-300 p-4 rounded-lg shadow-md text-center w-full md:w-1/2 transition-transform duration-300 hover:scale-105 hover:shadow-xl hover:border-transparent hover:bg-gradient-to-r from-gray-200 to-gray-100">
                         <span class="text-2xl">👥</span>
-                        <h3 class="font-bold text-lg">Education</h3>
+                        <h3 class="font-bold text-lg text-gray-800">Education</h3>
                         <p class="text-gray-600">B.Tech</p>
                         <p class="text-gray-500 text-sm">Information Technology</p>
                     </div>
                 </div>
+    
                 <p class="text-gray-700 mt-6 leading-relaxed">
-                    Hello! I'm Sahil, a passionate and driven developer with a keen interest in building innovative
-                    solutions that solve real-world problems. I specialize in full-stack development, AI, and software
-                    engineering, constantly pushing the boundaries of what's possible with technology.
+                    Hello! I'm <span class="font-semibold text-gray-900">Sahil</span>, a passionate and driven developer
+                    with a keen interest in building innovative solutions that solve real-world problems. I specialize in
+                    full-stack development, AI, and software engineering, constantly pushing the boundaries of what's
+                    possible with technology.
                 </p>
             </div>
         </div>
     </section>
+    
 
     <!-- Tech-Stack -->
     <section id="tech-stacks" class="bg-gray-100 py-16">
